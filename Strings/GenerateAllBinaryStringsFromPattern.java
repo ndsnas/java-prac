@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/generate-all-binary-strings-from-given-pattern/
 public class GenerateAllBinaryStringsFromPattern {
 
     public static void main(String[] args) {
