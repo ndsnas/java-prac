@@ -10,6 +10,7 @@ public class KConcatenation {
             arr[i] = scn.nextInt();
         }
         int k = scn.nextInt();
+        scn.close();
 
         // if k==1 simply return kadane's output
         if (k == 1) {
