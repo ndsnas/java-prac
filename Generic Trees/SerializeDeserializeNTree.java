@@ -1,3 +1,5 @@
+
+// https://www.geeksforgeeks.org/serialize-deserialize-n-ary-tree/
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -13,7 +15,6 @@ public class SerializeDeserializeNTree {
     }
 
     public static void main(String[] args) throws IOException {
-
         FileReader fileReader = new FileReader("SerializeDeserializeNTree.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
@@ -39,6 +40,7 @@ public class SerializeDeserializeNTree {
 
     public static int index = 0;
 
+    // 10 20 50 60 -1 -1 -1 30 70 -1 80 -1 -1 40 -1 -1
     public static Node deserialize(ArrayList<Integer> arr) {
         Node node = new Node();
         node.val = arr.get(index);
