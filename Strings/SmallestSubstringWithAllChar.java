@@ -1,5 +1,6 @@
 
 // https://www.geeksforgeeks.org/smallest-window-contains-characters-string/
+// https://www.youtube.com/watch?v=pbUNTDdxomI&t=733s&ab_channel=Pepcoding
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -33,7 +34,7 @@ public class SmallestSubstringWithAllChar {
             }
             // store solution and release
             while (map.size() == numberOfDistinctChars && lPointer <= rPointer) {
-                String currentWindow = getString(lPointer, rPointer, str); // not required : we can directly compute
+                String currentWindow = getString(lPointer, rPointer, str); // not required : we can directly compute the
                                                                            // length: (rPointer - lPointer)
                 if (result == "" || result.length() > currentWindow.length()) {
                     result = currentWindow;
