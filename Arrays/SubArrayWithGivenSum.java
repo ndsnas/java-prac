@@ -7,6 +7,10 @@ public class SubArrayWithGivenSum {
         solution(new int[] { 9, 4, 0, 0, 2, 10, 5 }, 1);
         solution(new int[] { 1, 2, 21 }, 21);
 
+        solution(new int[] { 1, 2, 3, 7, 5 }, 12);
+        solution(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 15);
+        solution(new int[] { 9, 45, 10, 190 }, 225);
+
     }
 
     public static void solution(int[] arr, int x) {
@@ -33,7 +37,7 @@ public class SubArrayWithGivenSum {
             }
 
         }
-        if (lPointer >= rPointer) {
+        if (lPointer >= rPointer || sum != x) {
             System.out.println("not found");
         } else {
             System.out.println(lPointer + " " + (rPointer - 1));
