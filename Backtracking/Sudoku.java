@@ -40,6 +40,9 @@ public class Sudoku {
                 if (isValid(i, board, row, col)) {
                     board[row][col] = i;
                     solveSudoku(board, nextRow, nextCol);
+                    // setting zero here because when we backtrack two steps then when we will be
+                    // back to this element then it should be zero so that a new valid number can be
+                    // filled here
                     board[row][col] = 0;
                 }
             }
