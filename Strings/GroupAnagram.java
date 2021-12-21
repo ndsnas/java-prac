@@ -11,6 +11,8 @@ public class GroupAnagram {
 
     }
 
+    // count the strings with same frequency map
+    // so find the frequency map of a string and add to bigMap
     private static Map<Map<Character, Integer>, List<String>> generateMap(List<String> list) {
         Map<Map<Character, Integer>, List<String>> bigMap = new HashMap<>();
 
