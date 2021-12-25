@@ -56,3 +56,11 @@ public class KthSmallestElement {
         arr[j] = temp;
     }
 }
+
+// one more way to do this is to use a priority queue and store first K element
+// in it and then replace the element in PQ if there's any smaller element in
+// the array than the largest element in PQ
+
+// PriorityQueue<Integer> maxPQ = new
+// PriorityQueue<>(Collections.reverseOrder());
+// PriorityQueue<Integer> pq =new PriorityQueue<>((x, y) -> Integer.compare(y, x));
