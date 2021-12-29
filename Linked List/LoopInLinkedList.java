@@ -23,6 +23,9 @@ public class LoopInLinkedList {
 
         node.next.next.next.next.next.next.next.next.next.next.next = node.next.next.next.next; // 11 -> 5
 
+        // complete ring test case
+        // node.next.next.next.next.next.next.next.next.next.next.next = node;
+
         loop(node);
     }
 
@@ -35,21 +38,33 @@ public class LoopInLinkedList {
         } while (r != null && r.next != null && t != null && r != t);
 
         System.out.println("r reached at: " + r.data + " t reached at: " + t.data);
+
+        // if there's a loop
         if (r == t) {
             r = node;
-            do {
-                r = r.next;
-                t = t.next;
-            } while (r.next != t.next);
-            System.out.println("Loop starts at :: " + r.next.data);
+            // if list a complete ring
+            if (r == t) {
+                while (t.next != r) {
+                    t = t.next;
+                }
+                System.out.println("Loop starts at :: " + t.data);
+            }
+
+            else {
+                do {
+                    r = r.next;
+                    t = t.next;
+                } while (r.next != t.next);
+                System.out.println("Loop starts at :: " + r.next.data);
+            }
 
             // removing loop
             t.next = null;
-            display(node);
+
         } else {
             System.out.println("No Loop Present");
-            display(node);
         }
+        display(node);
     }
 
     public static void display(Node node) {
