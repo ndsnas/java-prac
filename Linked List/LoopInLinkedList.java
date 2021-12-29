@@ -40,11 +40,22 @@ public class LoopInLinkedList {
             do {
                 r = r.next;
                 t = t.next;
-            } while (r != t);
-            System.out.println("Loop starts at :: " + r.data);
-        }
-        else {
+            } while (r.next != t.next);
+            System.out.println("Loop starts at :: " + r.next.data);
+
+            // removing loop
+            t.next = null;
+            display(node);
+        } else {
             System.out.println("No Loop Present");
+            display(node);
+        }
+    }
+
+    public static void display(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
         }
     }
 }
