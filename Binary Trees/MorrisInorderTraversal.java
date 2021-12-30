@@ -1,3 +1,11 @@
+// https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
+// https://www.youtube.com/watch?v=viegWtuH0uI
+// https://www.youtube.com/watch?v=oz17ihxBxgU
+
+/* only difference between morris in-order and pre-order traversal is that 
+in in-order traversal we print when the left subtree is completely processed or left subtree is null
+while in pre-order traversal we print when we arrive on a new node or when the left subtree is null
+*/
 public class MorrisInorderTraversal {
 
     public static class Node {
@@ -30,13 +38,18 @@ public class MorrisInorderTraversal {
                 Node left = curr.left;
                 Node rightMostNodeOfLeftNode = getRightMostNode(left, curr);
 
-                if (rightMostNodeOfLeftNode.right != curr) {
+                if (rightMostNodeOfLeftNode.right == null) {
+                    // rightMostNodeOfLeftNode.right is null means no thread is present
                     // create thread & move to left
                     rightMostNodeOfLeftNode.right = curr;
                     curr = curr.left;
                 } else {
-                    // destroy thread & print & print to right
+                    // rightMostNodeOfLeftNode.right is not null means already thread is present
+                    // otherwise rightmost child would have be null
+                    // destroy thread
                     rightMostNodeOfLeftNode.right = null;
+                    // since thread is already present it means that left sub-tree is completely
+                    // processed so we can print the current node and move to the right
                     System.out.println(curr.data);
                     curr = curr.right;
                 }
