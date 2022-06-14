@@ -14,6 +14,7 @@ public class DeleteOperationForTwoStrings {
         System.out.println(solve(word1, word2,0,0));
     }
 
+    // Try with tabulation as well
     public static int solve(String w1, String w2, int i, int j){
         if(i==w1.length() && j==w2.length()) return 0;
         if(i==w1.length() || j==w2.length()) return Math.max(w1.length()-i, w2.length()-j);
