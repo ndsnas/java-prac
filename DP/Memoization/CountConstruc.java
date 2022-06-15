@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CountConstruct{
+public class CountConstruc{
     public static void main(String[] args){
 
         System.out.println(countConstruct("abcdef", List.of("ab", "abc", "cd", "def", "abcd")));
@@ -12,8 +12,8 @@ public class CountConstruct{
         Integer result = null;
         for(String word : words){
             if(target.indexOf(word) == 0){
-                String substring = target.subString(word.length());
-                String count = countConstruct(subString, words);
+                String substring = target.substring(word.length());
+                Integer count = countConstruct(substring, words);
                 if(result == null){
                     result = count;
                 } 
