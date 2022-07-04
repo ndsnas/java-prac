@@ -12,24 +12,29 @@ public class Candy {
     public static int candy(int[] ratings) {
         int N = ratings.length;
         int[] l2r = new int[N];
-        Arrays.fill(l2r, 1);
+        Arrays.fill(l2r, 1); // all will get atleast 1 candy
         
         int[] r2l = new int[N];
-        Arrays.fill(r2l, 1);
+        Arrays.fill(r2l, 1); // all will get atleast 1 candy
         
+        // check left to right
         for(int i=1; i<N; i++){
+            // if current child has more rating than left => increment candy of current child
             if(ratings[i] > ratings[i-1]){
                 l2r[i] += l2r[i-1];
             }
         }
-        
+
+        // check right to left
         for(int i=N-2; i>=0; i--){
+            // if current child has more rating than right => increment candy of current child
             if(ratings[i] > ratings[i+1]){
                 r2l[i] += r2l[i+1];
             }
         }
         
         int ans = 0;
+        // take max of both the arrays
         for(int i=0; i<N; i++){
             ans += Math.max(l2r[i], r2l[i]);
         }
