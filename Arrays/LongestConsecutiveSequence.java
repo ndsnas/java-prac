@@ -1,3 +1,7 @@
+
+// https://leetcode.com/problems/longest-consecutive-sequence/
+// https://www.youtube.com/watch?v=CPzUOvBv3Vs
+// https://www.youtube.com/watch?v=YWXbu5uyGXs&ab_channel=Pepcoding
 import java.util.*;
 import java.util.stream.Collectors;
 
